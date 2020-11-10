@@ -1,4 +1,4 @@
-package fr.elhadi.ducplicatelinechecker.service;
+package fr.elhadi.ducplicatelinechecker.model;
 
 import java.util.Objects;
 
@@ -23,7 +23,7 @@ public class Element implements Comparable<Element>{
 
 
     private String replenishment;
-    private String provisions;
+    private String implementation;
 
     public String getDppType() {
         return dppType;
@@ -129,12 +129,12 @@ public class Element implements Comparable<Element>{
         this.replenishment = replenishment;
     }
 
-    public String getProvisions() {
-        return provisions;
+    public String getImplementation() {
+        return implementation;
     }
 
-    public void setProvisions(String provisions) {
-        this.provisions = provisions;
+    public void setImplementation(String implementation) {
+        this.implementation = implementation;
     }
 
     @Override
@@ -155,12 +155,12 @@ public class Element implements Comparable<Element>{
                 Objects.equals(getCurrentWeek(), element.getCurrentWeek()) &&
                 Objects.equals(getCurrentYear(), element.getCurrentYear()) &&
                 Objects.equals(getReplenishment(), element.getReplenishment()) &&
-                Objects.equals(getProvisions(), element.getProvisions());
+                Objects.equals(getImplementation(), element.getImplementation());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getDppType(), getDppThird(), getDppSubThird(), getCustomerType(), getCustomerThird(), getCustomerSubTihrd(), getFinalType(), getFinalThird(), getFinalSubThird(), getItemNumber(), getCurrentWeek(), getCurrentYear(), getReplenishment(), getProvisions());
+        return Objects.hash(getDppType(), getDppThird(), getDppSubThird(), getCustomerType(), getCustomerThird(), getCustomerSubTihrd(), getFinalType(), getFinalThird(), getFinalSubThird(), getItemNumber(), /*getCurrentWeek(),*/ getCurrentYear(), getReplenishment(), getImplementation());
     }
 
     @Override

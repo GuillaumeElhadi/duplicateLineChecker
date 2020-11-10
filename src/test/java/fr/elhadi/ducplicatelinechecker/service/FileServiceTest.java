@@ -1,5 +1,7 @@
 package fr.elhadi.ducplicatelinechecker.service;
 
+import fr.elhadi.ducplicatelinechecker.model.Element;
+import fr.elhadi.ducplicatelinechecker.model.WorkingMode;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
@@ -7,11 +9,8 @@ import java.util.List;
 
 public class FileServiceTest extends TestCase {
 
-    public void testFileIsPresent() {
-    }
-
     public void testExtractElementsFromDocument() {
-        List<Element> linesOfThatFile = FileService.extractElementsFromDocument("src/test/resources/source.txt");
+        List<Element> linesOfThatFile = FileService.extractElementsFromDocument(WorkingMode.TEST, "src/test/resources/source.txt");
         assertNotNull(linesOfThatFile);
     }
 
